@@ -5,6 +5,6 @@
 !/config
 !/accounts
 !/.gitignore
-!/.README.md
+!/README.md
 node_modules
 .DS_Store
