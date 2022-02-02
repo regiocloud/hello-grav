@@ -1,0 +1,14 @@
+name: your theme name # pls adjust
+slug: your theme slug # pls adjust
+type: theme
+version: 0.1.0
+description: your theme description #pls adjust
+author:
+  name: your name #pls adjust
+  email: your@email.example
+homepage: https://your-homepage-url #pls adjust
+keywords: grav, theme, etc
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }

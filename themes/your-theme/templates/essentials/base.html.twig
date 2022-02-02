@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+{% block head %}
+    <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+    {% include 'essentials/metadata.html.twig' %}
+    {% include 'essentials/favicon.html.twig' %}
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css-compiled/main.min.css') %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('theme://js/essentials/base.js') %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="body" class="preload {{ page.header.body_classes|e }}">
+{% block body %}
+
+    {% block navigation %}
+    <nav class="main-nav">
+        {% include 'essentials/navigation.html.twig' %}
+    </nav>
+    {% endblock %}
+
+    <header class="header">
+    {% block header %}
+        {% include 'essentials/header.html.twig'%}
+    {% endblock %}
+    </header>
+
+    
+    <article>
+    {% block article %}
+        {% block content %}{% endblock %}
+    {% endblock article %}
+    </article>
+    
+    <footer>
+    {% block footer %}
+        {% include 'essentials/footer.html.twig' %}
+    {% endblock %}
+    </footer>
+
+    {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+    {% endblock %}
+{% endblock %}
+</body>
+</html>

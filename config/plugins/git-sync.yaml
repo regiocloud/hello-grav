@@ -1,0 +1,36 @@
+enabled: true
+folders:
+  - pages
+  - themes
+  - plugins
+  - config
+  - accounts
+  - .gitignore
+SyncNotice: null
+sync:
+  on_save: true
+  on_delete: true
+  on_media: true
+  cron_enable: false
+  cron_at: '0 12,23 * * *'
+local_repository: null
+repository: 'link to your github repo' # pls adjust
+no_user: '0'
+user: your github username # pls adjust
+password: your github access token # pls adjust
+webhook: your webhook
+webhook_enabled: '0'
+webhook_secret: your webhook secret
+branch: set your desired branch # pls adjust
+remote:
+  name: origin
+  branch: set your desired branch # pls adjust
+git:
+  author: gituser
+  message: '(Grav GitSync) Automatic Commit'
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+  ignore: null
+  private_key: null
+logging: false
