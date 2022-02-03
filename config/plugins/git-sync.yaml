@@ -6,6 +6,7 @@ folders:
   - config
   - accounts
   - .gitignore
+  - README.md
 SyncNotice: null
 sync:
   on_save: true
@@ -26,11 +27,11 @@ remote:
   name: origin
   branch: set your desired branch # pls adjust
 git:
-  author: gituser
+  author: gravfull
   message: '(Grav GitSync) Automatic Commit'
   name: GitSync
   email: git-sync@trilby.media
   bin: git
-  ignore: null
-  private_key: null
-logging: false
+  ignore: "node_modules\n.DS_Store"
+  private_key: /var/www/.ssh/id_rsa
+logging: true

@@ -181,7 +181,7 @@ session:
   enabled: true
   initialize: true
   timeout: 1800
-  name: your-site-name # pls adjust
+  name: grav-site
   uniqueness: path
   secure: false
   secure_https: true
