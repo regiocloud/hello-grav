@@ -12,8 +12,6 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "gulp-sourcemaps": "^2.6.4",
-    "swiper": "^6.5.0"
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
