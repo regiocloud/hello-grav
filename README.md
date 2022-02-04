@@ -1,12 +1,12 @@
 # Core GRAV user setup with some included nice features if you want to build your own GRAV theme
 + SCSS compiling with gulp
 + Comfortable utility SCSS styles you can further build on
-+ Essential Templates
-+ Useful external Scripts
++ Essential templates
++ Useful external scripts
 + Editor group
 + Git-sync plugin
 + Nice folder structure
-+ Nice preset of system configuration
++ Preset of system configuration for a nice performance of you website
 ## This guide is just for the case that you already have installed GRAV!
 1. Run 'git clone https://github.com/23technologies/grav-user-setup.git user' to clone this repo into a folder called 'user'
 2. Run 'git remote set-url origin https://github.com/path/to/your/github/repo' to pair it with your new github repo
