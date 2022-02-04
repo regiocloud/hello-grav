@@ -6,5 +6,5 @@ editor:
       login: true
       cache: true
       pages: true
-  description: 'Can only change content.'
+  description: 'Can only change content of pages.'
   enabled: true
