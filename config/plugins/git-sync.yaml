@@ -19,9 +19,9 @@ repository: 'link to your github repo' # pls adjust
 no_user: '0'
 user: your github username # pls adjust
 password: your github access token # pls adjust
-webhook: your webhook
-webhook_enabled: '0'
-webhook_secret: your webhook secret
+webhook: your webhook # adjust if needed
+webhook_enabled: '0' #change to '1' if needed
+webhook_secret: your webhook secret # adjust if needed
 branch: set your desired branch # pls adjust
 remote:
   name: origin
@@ -33,5 +33,5 @@ git:
   email: git-sync@trilby.media
   bin: git
   ignore: "node_modules\n.DS_Store"
-  private_key: /var/www/.ssh/id_rsa
+  private_key: /path/to/your/.ssh/id_rsa # pls adjust
 logging: true

@@ -1,0 +1,10 @@
+editor:
+  access:
+    site:
+      login: true
+    admin:
+      login: true
+      cache: true
+      pages: true
+  description: 'Can only change content.'
+  enabled: true
