@@ -2,7 +2,6 @@
 title: site title # pls adjust
 visible: false
 metadata:
-    refresh: 30
     generator: 'Grav'
     description: 'your site description' # pls adjust
     keywords: 'HTML, CSS, XML, JavaScript'

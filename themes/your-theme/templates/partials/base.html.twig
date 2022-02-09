@@ -2,9 +2,12 @@
 <html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
 <head>
 {% block head %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
-    {% include 'essentials/metadata.html.twig' %}
-    {% include 'essentials/favicon.html.twig' %}
+    {% include 'partials/metadata.html.twig' %}
+    {% include 'partials/favicon.html.twig' %}
 {% endblock head %}
 
 {% block stylesheets %}
@@ -13,7 +16,7 @@
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/essentials/base.js') %}
+    {% do assets.addJs('theme://js/partials/base.js') %}
     {% do assets.addJs('theme://js/externals/aos/aos.js') %}
     {% do assets.addJs('theme://js/externals/aos/aos-init.js') %}
     {% do assets.addJs('theme://js/externals/swiper/swiper-bundle-min.js') %}
@@ -31,13 +34,13 @@
 
     {% block navigation %}
     <nav class="main-nav">
-        {% include 'essentials/navigation.html.twig' %}
+        {% include 'partials/navigation.html.twig' %}
     </nav>
     {% endblock %}
 
     <header class="header">
     {% block header %}
-        {% include 'essentials/header.html.twig'%}
+        {% include 'partials/header.html.twig'%}
     {% endblock %}
     </header>
 
@@ -50,7 +53,7 @@
     
     <footer>
     {% block footer %}
-        {% include 'essentials/footer.html.twig' %}
+        {% include 'partials/footer.html.twig' %}
     {% endblock %}
     </footer>
 
