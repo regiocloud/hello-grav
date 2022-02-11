@@ -1,0 +1,19 @@
+@font-face{
+    font-family: "Urbanist Regular";
+    src: url('../fonts/Urbanist-Regular.ttf');
+    font-display: swap;
+}
+@font-face{
+    font-family: "Urbanist Bold";
+    src: url('../fonts/Urbanist-Bold.ttf');
+    font-display: swap;
+}
+@font-face{
+    font-family: "Urbanist Thin";
+    src: url('../fonts/Urbanist-Thin.ttf');
+    font-display: swap;
+}
+
+$font-family-regular: "Urbanist Regular", sans-serif;
+$font-family-bold: "Urbanist Bold", sans-serif;
+$font-family-thin: "Urbanist Thin", sans-serif;
