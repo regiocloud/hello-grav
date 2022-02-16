@@ -16,12 +16,11 @@
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/partials/base.js') %}
-    {% do assets.addJs('theme://js/externals/aos/aos.js') %}
-    {% do assets.addJs('theme://js/externals/aos/aos-init.js') %}
-    {% do assets.addJs('theme://js/externals/swiper/swiper-bundle-min.js') %}
-    {% do assets.addJs('theme://js/externals/swiper/swiper-config.js') %}
+    {% do assets.addJs('theme://js/externals/aos.js') %}
+    {% do assets.addJs('theme://js/externals/swiper.js') %}
     {% do assets.addJs('theme://js/externals/piwik.js') %}
+    {% do assets.addJs('theme://js/externals/glightbox.js') %}
+    {% do assets.addJs('theme://js/internals/base.js') %}
 {% endblock %}
 
 {% block assets deferred %}

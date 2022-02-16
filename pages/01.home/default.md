@@ -7,7 +7,6 @@ metadata:
     keywords: 'HTML, CSS, XML, JavaScript'
     author: 'your name' # pls adjust
     'og:title': your og title # pls adjust
-    'og:type': video.movie
     'og:url': https://link-to-your-og-url # pls adjust
     'og:image': https://link-to-your-og-image  # pls adjust
     'twitter:card' : summary

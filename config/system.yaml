@@ -46,7 +46,7 @@ pages:
   process:
     markdown: true
     twig: true
-  twig_first: true
+  twig_first: false
   never_cache_twig: false
   events:
     page: true
@@ -165,12 +165,6 @@ images:
     retina_scale: 1
   defaults:
     loading: auto
-  watermark:
-    image: 'system://images/watermark.png'
-    position_y: center
-    position_x: center
-    scale: 33
-    watermark_all: false
 media:
   enable_media_timestamp: false
   unsupported_inline_types: {  }
