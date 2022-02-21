@@ -3691,3 +3691,7 @@
   return glightbox;
 
 })));
+
+const lightbox = GLightbox({
+  touchNavigation: true,
+});
