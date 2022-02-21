@@ -7,3 +7,16 @@
 7. Start coding your own GRAV theme 🚀
 
 **If you're new to GRAV read the [documentation](https://learn.getgrav.org)**
+
+## Instructions
+
+### All modules
++ Frontmatter (seperated part at the top of the markdown page sites)
+    - title = defines title of the module which also will be used as the headline if you set "headline: true" and the name of the anchor for navigation.
+    - visible = if "title" is defined this option can enable that the module will be shown and reachable in the navigation (available attributes: true, false)
+    - animation = defines the animation how the module will be shown up (check available attributes [here](https://michalsnik.github.io/aos/)).
+    - position = important for the right top and bottom margin of the module (available attributes: module-first, module-after-swiper, module-between, module-last).
+
+### Image module
++ Frontmatter
+    - link = sets a individual link on the image (for example: https://your.domain).
