@@ -1,9 +1,10 @@
 /*
-!/pages
-!/themes
-!/plugins
-!/config
 !/accounts
+!/blueprints
+!/config
+!/pages
+!/plugins
+!/themes
 !/.gitignore
 !/README.md
 node_modules
