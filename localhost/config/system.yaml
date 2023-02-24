@@ -1,0 +1,15 @@
+debugger:
+  enabled: true
+assets:
+  css_pipeline: false
+  css_pipeline_include_externals: false
+  css_pipeline_before_excludes: false
+  css_minify: false
+  css_minify_windows: false
+  css_rewrite: false
+  js_pipeline: false
+  js_pipeline_include_externals: false
+  js_pipeline_before_excludes: false
+  js_minify: false
+cache:
+  enabled: false

@@ -1,10 +1,11 @@
 enabled: true
 folders:
-  - pages
-  - themes
-  - plugins
-  - config
   - accounts
+  - config
+  - localhost
+  - pages
+  - plugins
+  - themes
   - .gitignore
   - README.md
 SyncNotice: null

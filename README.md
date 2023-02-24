@@ -1,5 +1,6 @@
 # Core GRAV user setup with some included nice features if you want to build your own GRAV theme
 + SCSS compiling with gulp
++ Watch your changes live with browsersync included in gulp
 + Comfortable utility SCSS styles you can further build on
 + Essential templates
 + Useful external scripts
