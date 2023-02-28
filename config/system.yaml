@@ -1,6 +1,6 @@
 absolute_urls: false
 timezone: 'Europe/Berlin'
-default_locale: null
+default_locale:
 param_sep: ':'
 wrapped_site: false
 reverse_proxy_setup: false
@@ -17,13 +17,13 @@ http_x_forwarded:
   ip: true
 languages:
   supported: {  }
-  default_lang: null
+  default_lang:
   include_default_lang: true
-  include_default_lang_file_extension: true
+  include_default_lang_file_extension: false
   translations: true
   translations_fallback: true
   session_store_active: true
-  http_accept_language: false
+  http_accept_language: true
   override_locale: false
   content_fallback: {  }
   pages_fallback_only: false
@@ -32,20 +32,20 @@ home:
   hide_in_urls: true
 pages:
   type: regular
-  theme: your-theme # pls adjust
+  theme: quark
   order:
     by: default
     dir: asc
   list:
     count: 20
   dateformat:
-    default: null
+    default:
     short: 'jS M Y'
     long: 'F jS \a\t g:ia'
   publish_dates: true
   process:
     markdown: true
-    twig: true
+    twig: false
   twig_first: false
   never_cache_twig: false
   events:
@@ -75,13 +75,13 @@ pages:
     - atom
   append_url_extension: ''
   expires: 604800
-  cache_control: null
+  cache_control: 
   last_modified: false
-  etag: true
+  etag: false
   vary_accept_encoding: false
+  redirect_default_route: false
   redirect_default_code: 302
-  redirect_trailing_slash: 1
-  redirect_default_route: 0
+  redirect_trailing_slash: true
   ignore_files:
     - .DS_Store
   ignore_folders:
@@ -100,10 +100,10 @@ cache:
   check:
     method: file
   driver: auto
-  prefix: g
+  prefix: 'g'
   purge_at: '0 4 * * *'
   clear_at: '0 3 * * *'
-  clear_job_type: standard
+  clear_job_type: 'standard'
   clear_images_by_default: false
   cli_compatibility: false
   lifetime: 604800
@@ -111,24 +111,22 @@ cache:
   allow_webserver_gzip: true
   redis:
     socket: false
-    password: null
-    database: null
+    password: 
+    database: 
 twig:
   cache: true
   debug: true
   auto_reload: true
-  autoescape: true
+  autoescape: false
   undefined_functions: true
   undefined_filters: true
-  safe_functions: {  }
-  safe_filters: {  }
   umask_fix: false
 assets:
   css_pipeline: true
   css_pipeline_include_externals: true
   css_pipeline_before_excludes: true
   css_minify: true
-  css_minify_windows: false
+  css_minify_windows: true
   css_rewrite: true
   js_pipeline: true
   js_pipeline_include_externals: true
@@ -139,7 +137,7 @@ assets:
   collections:
     jquery: 'system://assets/jquery/jquery-3.x.min.js'
 errors:
-  display: true
+  display: 1
   log: true
 log:
   handler: file
@@ -153,16 +151,16 @@ debugger:
     close_connection: true
   twig: true
 images:
-  default_image_quality: 85
+  default_image_quality: 100
   cache_all: true
   cache_perms: '0755'
   debug: false
-  auto_fix_orientation: true
+  auto_fix_orientation: false
   seofriendly: true
   cls:
-    auto_sizes: true
-    aspect_ratio: true
-    retina_scale: 1
+    auto_sizes: false
+    aspect_ratio: false
+    retina_scale: true
   defaults:
     loading: auto
 media:
@@ -170,7 +168,6 @@ media:
   unsupported_inline_types: {  }
   allowed_fallback_types: {  }
   auto_metadata_exif: false
-  upload_limit: 2097152
 session:
   enabled: true
   initialize: true
@@ -182,8 +179,8 @@ session:
   httponly: true
   samesite: Lax
   split: true
-  domain: null
-  path: null
+  domain:
+  path:
 gpm:
   releases: stable
   official_gpm_only: true
@@ -191,8 +188,8 @@ gpm:
 http:
   method: auto
   enable_proxy: true
-  proxy_url: null
-  proxy_cert_path: null
+  proxy_url:
+  proxy_cert_path:
   concurrent_connections: 5
   verify_peer: true
   verify_host: true
@@ -211,6 +208,6 @@ flex:
       enabled: true
       lifetime: 600
 strict_mode:
-  yaml_compat: false
-  twig_compat: false
+  yaml_compat: true
+  twig_compat: true
   blueprint_compat: false

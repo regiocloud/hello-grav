@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
     {% include 'partials/metadata.html.twig' %}
-    {% include 'partials/favicon.html.twig' %}
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('theme://css/css-compiled/main.min.css') %}
+    {% do assets.addCss('theme://css-compiled/main.min.css') %}
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/externals/aos.js') %}
-    {% do assets.addJs('theme://js/externals/swiper.js') %}
-    {% do assets.addJs('theme://js/externals/piwik.js') %}
-    {% do assets.addJs('theme://js/externals/glightbox.js') %}
-    {% do assets.addJs('theme://js/internals/base.js') %}
+    {% do assets.addJs('theme://js/aos.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/swiper.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/glightbox.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/base.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -28,37 +28,39 @@
     {{ assets.js()|raw }}
 {% endblock %}
 </head>
-<body id="body" class="preload {{ page.header.body_classes|e }}">
-{% block body %}
-
-    {% block navigation %}
-    <nav class="main-nav">
-        {% include 'partials/navigation.html.twig' %}
-    </nav>
-    {% endblock %}
-
-    <header class="header">
+<body id="body" class="preload {% block body_classes %}{{ body_classes }}{% endblock %}">
+    <header id="header">
     {% block header %}
-        {% include 'partials/header.html.twig'%}
+        <section id="header_logo">
+            {% include 'partials/logo.html.twig' %}
+        </section>
+        <nav id="desktop-navigation">
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+        </nav>
+        <div id="burger-menu">
+            {# placeholder for burger-menu #}
+        </div>
     {% endblock %}
     </header>
-
-    
-    <article>
-    {% block article %}
-        {% block content %}{% endblock %}
-    {% endblock article %}
+    <article class="inside">
+    {% block article %}{% endblock %}
     </article>
-    
     <footer>
     {% block footer %}
         {% include 'partials/footer.html.twig' %}
     {% endblock %}
     </footer>
-
-    {% block bottom %}
-        {{ assets.js('bottom')|raw }}
+    {% block mobile %}
+    <div class="mobile-container">
+        <nav class="overlay-menu">
+            {% include 'partials/navigation.html.twig' with {tree: true} %}
+        </nav>
+    </div>
     {% endblock %}
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
 {% endblock %}
 </body>
 </html>

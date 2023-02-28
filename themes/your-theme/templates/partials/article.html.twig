@@ -1,9 +1,0 @@
-<article {% if page.header.animation|e %} data-aos="{{ page.header.animation|e }}" {% endif %} class="inside {% if page.header.position|e %} {{ page.header.position|e }} {% endif %}">
-    {% if page.header.title|e and page.header.visible == true %}
-        <div id="{{ page.header.title|e }}" class="anchor"></div>
-    {% endif %}
-    {% if page.header.headline == true %}
-        <h2>{{ page.header.title }}</h2>
-    {% endif %}
-    {% block content %}{% endblock %}
-</article>

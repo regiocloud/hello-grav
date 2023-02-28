@@ -13,7 +13,7 @@ var watch_dir_scss = './scss/**/*.scss';
 var watch_dir_twig = './templates/**/*.html.twig';
 var watch_dir_js = './js/**/*.js';
 var src_dir = './scss/*.scss';
-var dest_dir = './css/css-compiled';
+var dest_dir = './css-compiled';
 
 var paths = {
     source: src_dir
