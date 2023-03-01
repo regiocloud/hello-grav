@@ -1,7 +1,7 @@
 state: enabled
 email: jschweppe@mailbox.org
 fullname: 'Jonathan Schweppe'
-title: CEO
+title: admin
 access:
   admin:
     login: true

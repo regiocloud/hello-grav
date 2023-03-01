@@ -12,15 +12,15 @@
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('theme://css-compiled/main.min.css') %}
+    {% do assets.addCss('theme://dist/css-compiled/main.min.css') %}
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/aos.js', {group:'bottom'}) %}
-    {% do assets.addJs('theme://js/swiper.js', {group:'bottom'}) %}
-    {% do assets.addJs('theme://js/glightbox.js', {group:'bottom'}) %}
-    {% do assets.addJs('theme://js/base.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://src/js/aos.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://src/js/swiper.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://src/js/glightbox.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://src/js/base.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}

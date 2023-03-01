@@ -1,12 +1,13 @@
 {
   "devDependencies": {
-    "browser-sync": "^2.27.12",
     "gulp": "^4.0.2",
+    "browser-sync": "^2.27.12",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^3.9.4",
     "gulp-csscomb": "^3.0.8",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-webp": "^4.0.1"
   },
   "scripts": {
     "dev": "gulp watch",
