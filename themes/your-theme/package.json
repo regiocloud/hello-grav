@@ -1,19 +1,26 @@
 {
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "browser-sync": "^2.27.12",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-csscomb": "^3.0.8",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-webp": "^4.0.1"
-  },
+  "name": "grav-theme-builder",
+  "version": "1.0.0",
+  "description": "Minimalist gulp setup for creating your own GRAV themes. Including browser-sync, sass compilation and webp-converter. Does not use css and js optimization because it's not necessary due to the included asset manager in GRAV.",
+  "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "start": "gulp"
   },
+  "keywords": [
+    "GRAV Theme, sass compilation, browser-sync, webp-converter"
+  ],
+  "author": "Jonathan Schweppe",
+  "license": "ISC",
   "dependencies": {
-    "gulp-sourcemaps": "^2.6.4"
+    "browser-sync": "^2.27.5",
+    "gulp-sass": "^5.0.0",
+    "gulp-webp": "^4.0.0",
+    "sass": "^1.47.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^4.0.2"
   }
 }
