@@ -1004,6 +1004,11 @@ form label {
     margin: 0; }
   form label [data-hint] {
     display: inline; }
+  form label .hint-icon {
+    opacity: 0.7;
+    transition: 0.5s opacity; }
+  form label:hover .hint-icon {
+    opacity: 1.0; }
   form label.inline {
     display: inline;
     vertical-align: middle;
@@ -1403,6 +1408,19 @@ textarea.frontmatter {
 
 .form-list-wrapper [data-collection-nosort] .collection-sort {
   display: none; }
+
+.form-list-wrapper .list-confirm-deletion {
+  cursor: pointer;
+  display: flex;
+  position: absolute !important;
+  z-index: 10010;
+  padding: .5rem;
+  top: 13px;
+  right: 20px; }
+  .form-list-wrapper .list-confirm-deletion > i, .form-list-wrapper .list-confirm-deletion span {
+    text-align: center;
+    display: inline-flex;
+    align-items: center; }
 
 .form-label.block {
   position: relative; }
@@ -1839,10 +1857,15 @@ table.noflex {
   line-height: inherit !important;
   font-family: inherit !important;
   border-radius: 4px !important;
-  box-shadow: inherit !important; }
+  box-shadow: inherit !important;
+  border-color: transparent !important; }
+  #admin-main .admin-block a.gumroad-button:hover {
+    transform: inherit; }
   #admin-main .admin-block a.gumroad-button .gumroad-button-logo {
     display: none !important;
     background-image: none !important; }
+  #admin-main .admin-block a.gumroad-button .logo-full {
+    display: none; }
 
 #error {
   text-align: center;
@@ -2730,7 +2753,7 @@ table.noflex {
     font-size: 1.1rem;
     margin: 0;
     linep-height: 1.2; }
-  .user-details .gravatar {
+  .user-details .avatar {
     font-size: 0.9rem;
     padding: 0; }
   @media only all and (max-width: 47.938em) {
@@ -2796,6 +2819,9 @@ table.noflex {
   bottom: 0;
   right: 0;
   left: 0; }
+
+.gumroad .cart-button {
+  display: none !important; }
 
 @media only all and (max-width: 47.938em) {
   #admin-main .config-wrapper-system .form-tabs.side-tabs > .tabs-nav {
@@ -4101,6 +4127,19 @@ html.remodal-is-locked {
   padding-left: 20px; }
 
 /* The MIT License */
+.pagemedia-field .form-label {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.5rem;
+  align-items: center; }
+  .pagemedia-field .form-label label {
+    cursor: pointer;
+    flex: 1; }
+
+.pagemedia-field input[type="range"]::-webkit-slider-runnable-track {
+  background: inherit !important;
+  border: none !important; }
+
 .dropzone {
   position: relative;
   border-radius: 4px;
@@ -4149,7 +4188,7 @@ html.remodal-is-locked {
       content: '\f12a'; }
     .dropzone .dz-preview .dz-progress {
       position: absolute;
-      top: 150px;
+      bottom: auto;
       left: 0px;
       right: 0px;
       height: 4px;

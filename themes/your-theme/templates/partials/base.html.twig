@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
     {% include 'partials/metadata.html.twig' %}
-    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url('theme://dist/images/favicon.ico') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @package    Grav\Plugin\Admin
+ *
+ * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
 namespace Grav\Plugin\Admin;
 
 use DateTime;
@@ -980,7 +987,7 @@ class Admin
             $obj->file = $file;
             $obj->page = $pages->get(dirname($obj->path));
 
-            $fileInfo = pathinfo($obj->title);
+            $fileInfo = Utils::pathinfo($obj->title);
             $filename = str_replace(['@3x', '@2x'], '', $fileInfo['filename']);
             if (isset($fileInfo['extension'])) {
                 $filename .= '.' . $fileInfo['extension'];
@@ -1979,7 +1986,7 @@ class Admin
         $page = $path ? $pages->find($path, true) : $pages->root();
 
         if (!$page) {
-            $slug = basename($path);
+            $slug = Utils::basename($path);
 
             if ($slug === '') {
                 return null;

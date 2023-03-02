@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Plugin\Admin
  *
- * @copyright  Copyright (c) 2015 - 2022 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -15,6 +15,7 @@ use Grav\Common\Page\Pages;
 use Grav\Common\Uri;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
+use Grav\Common\Utils;
 use Grav\Framework\RequestHandler\Exception\PageExpiredException;
 use Grav\Framework\RequestHandler\Exception\RequestException;
 use Grav\Plugin\Admin\Admin;
@@ -111,7 +112,7 @@ class LoginController extends AdminController
     {
         $uri = (string)$this->getRequest()->getUri();
 
-        $ext = pathinfo($uri, PATHINFO_EXTENSION);
+        $ext = Utils::pathinfo($uri, PATHINFO_EXTENSION);
         $accept = $this->getAccept(['application/json', 'text/html']);
         if ($ext === 'json' || $accept === 'application/json') {
             return $this->createErrorResponse(new RequestException($this->getRequest(), $this->translate('PLUGIN_ADMIN.LOGGED_OUT'), 401));
@@ -486,11 +487,8 @@ class LoginController extends AdminController
                 throw new \RuntimeException('Sending email failed');
             }
 
-            // For testing only!
-            //Admin::DEBUG && Admin::addDebugMessage(sprintf('Email sent to %s', $to), $body);
-
             $this->setMessage($this->translate('PLUGIN_ADMIN.FORGOT_INSTRUCTIONS_SENT_VIA_EMAIL'));
-        } catch (\RuntimeException|\Swift_SwiftException $e) {
+        } catch (\Exception $e) {
             $rateLimiter->resetRateLimit($username);
 
             /** @var Debugger $debugger */
