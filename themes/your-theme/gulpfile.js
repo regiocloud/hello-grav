@@ -7,6 +7,7 @@ const del  = require('del');
 const paths = {
   src: {
     scss: './src/scss/*.scss',
+    js: './src/js/**/*',
     images: './src/images/**/*.{png,jpg,jpeg}',
     fonts: './src/fonts/**/*.{woff,ttf}'
   },
@@ -14,11 +15,12 @@ const paths = {
     scss: './src/scss/**/*.scss',
     images: './src/images/**/*.{png,jpg,jpeg}',
     fonts: './src/fonts/**/*.{woff,ttf}',
-    twig: './templates/**/*.html.twig',
-    js: './src/js/**/*.js'
+    js: './src/js/**/*.js',
+    twig: './templates/**/*.html.twig'
   },
   dest: {
     css: './dist/css-compiled',
+    js: './dist/js',
     images: './dist/images-compiled',
     fonts: './dist/fonts'
   }
@@ -38,11 +40,25 @@ function compileSass() {
 }
 
 gulp.task('convert-images', () => {
-  return gulp.src(paths.src.images).pipe(webp()).pipe(gulp.dest(paths.dest.images));
+  return gulp
+  .src(paths.src.images)
+  .pipe(webp())
+  .pipe(gulp.dest(paths.dest.images))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('stream-fonts', () =>{
-  return gulp.src(paths.src.fonts).pipe(gulp.dest(paths.dest.fonts));
+  return gulp
+  .src(paths.src.fonts)
+  .pipe(gulp.dest(paths.dest.fonts))
+  .pipe(browserSync.stream());
+});
+
+gulp.task('stream-js', () =>{
+  return gulp
+  .src(paths.src.js)
+  .pipe(gulp.dest(paths.dest.js))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('clean-all', () => {
@@ -61,6 +77,10 @@ gulp.task('clean-css', () => {
   return del(['dist/css-compiled/**/*']);
 });
 
+gulp.task('clean-js', () => {
+  return del(['dist/js/**/*']);
+});
+
 
 
 function watch() {
@@ -70,10 +90,10 @@ function watch() {
   gulp.watch(paths.watch.scss, gulp.series('clean-css', compileSass));
   gulp.watch(paths.watch.images, gulp.series('clean-images', 'convert-images'));
   gulp.watch(paths.watch.fonts, gulp.series('clean-fonts', 'stream-fonts'));
+  gulp.watch(paths.watch.js, gulp.series('clean-js', 'stream-js'));
   gulp.watch(paths.watch.twig).on('change', browserSync.reload);
-  gulp.watch(paths.watch.js).on('change', browserSync.reload);
 }
 
 exports.watch = watch;
-exports.build = gulp.series('clean-all', compileSass, 'stream-fonts', 'convert-images');
+exports.build = gulp.series('clean-all', compileSass, 'stream-js', 'stream-fonts', 'convert-images');
 exports.default = watch;
