@@ -8,8 +8,8 @@ const paths = {
   src: {
     scss: './src/scss/*.scss',
     js: './src/js/**/*',
-    images: './src/images/**/*.{png,jpg,jpeg}',
-    fonts: './src/fonts/**/*.{woff,ttf}'
+    images: './src/images/**/*.{png,PNG,jpg,JPG,jpeg,JPEG}',
+    fonts: './src/fonts/**/*.{woff,WOFF,ttf,TTF}'
   },
   watch: {
     scss: './src/scss/**/*.scss',
