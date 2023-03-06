@@ -1,9 +1,0 @@
-version: '1.2'
-timestamp: 1677783100
-count: 1
-index:
-  schwepps:
-    storage_key: schwepps
-    storage_timestamp: 1677621046
-    key: schwepps
-    email: jschweppe@mailbox.org
