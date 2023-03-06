@@ -13,8 +13,8 @@ const paths = {
   },
   watch: {
     scss: './src/scss/**/*.scss',
-    images: './src/images/**/*.{png,jpg,jpeg}',
-    fonts: './src/fonts/**/*.{woff,ttf}',
+    images: './src/images/**/*.{png,PNG,jpg,JPG,jpeg,JPEG',
+    fonts: './src/fonts/**/*.{woff,WOFF,ttf,TTF}',
     js: './src/js/**/*.js',
     twig: './templates/**/*.html.twig'
   },
