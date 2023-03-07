@@ -47,9 +47,9 @@ pages:
   publish_dates: true
   process:
     markdown: true
-    twig: false
+    twig: true
   twig_first: false
-  never_cache_twig: false
+  never_cache_twig: true
   events:
     page: true
     twig: true
@@ -106,7 +106,7 @@ cache:
   purge_at: '0 4 * * *'
   clear_at: '0 3 * * *'
   clear_job_type: standard
-  clear_images_by_default: false
+  clear_es_by_default: false
   cli_compatibility: false
   lifetime: 604800
   gzip: true
@@ -160,7 +160,7 @@ debugger:
   twig: true
 images:
   default_image_quality: 100
-  cache_all: true
+  cache_all: false
   cache_perms: '0755'
   debug: false
   auto_fix_orientation: false
@@ -171,12 +171,9 @@ images:
     retina_scale: true
   defaults:
     loading: auto
-  watermark:
-    image: 'system://images/watermark.png'
     position_y: center
     position_x: center
     scale: 33
-    watermark_all: false
 media:
   enable_media_timestamp: false
   unsupported_inline_types: {  }
@@ -226,4 +223,4 @@ flex:
 strict_mode:
   yaml_compat: true
   twig_compat: true
-  blueprint_compat: false
+  blueprint_compat: true
