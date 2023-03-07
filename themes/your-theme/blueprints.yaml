@@ -1,7 +1,7 @@
 name: your theme name # pls adjust
 slug: your theme slug # pls adjust
 type: theme
-version: 0.1.0
+version: 1.0
 description: your theme description #pls adjust
 author:
   name: your name #pls adjust
