@@ -26,20 +26,20 @@ const paths = {
   }
 };
 
-function compileSass() {
+gulp.task ('compile-sass', () => {
   return gulp
-    .src(paths.src.scss)
-    .pipe(
-      sass({
-        outputStyle: 'expanded',
-        precision: 10,
-      }).on('error', sass.logError)
-    )
-    .pipe(gulp.dest(paths.dest.css))
-    .pipe(browserSync.stream());
-}
+  .src(paths.src.scss)
+  .pipe(
+    sass({
+      outputStyle: 'expanded',
+      precision: 10,
+    }).on('error', sass.logError)
+  )
+  .pipe(gulp.dest(paths.dest.css))
+  .pipe(browserSync.stream());
+});
 
-gulp.task('convert-images', () => {
+gulp.task('compile-images', () => {
   return gulp
   .src(paths.src.images)
   .pipe(webp())
@@ -47,14 +47,14 @@ gulp.task('convert-images', () => {
   .pipe(browserSync.stream());
 });
 
-gulp.task('stream-fonts', () =>{
+gulp.task('compile-fonts', () =>{
   return gulp
   .src(paths.src.fonts)
   .pipe(gulp.dest(paths.dest.fonts))
   .pipe(browserSync.stream());
 });
 
-gulp.task('stream-js', () =>{
+gulp.task('compile-js', () =>{
   return gulp
   .src(paths.src.js)
   .pipe(gulp.dest(paths.dest.js))
@@ -81,19 +81,17 @@ gulp.task('clean-js', () => {
   return del(['dist/js/**/*']);
 });
 
-
-
 function watch() {
   browserSync.init({
     proxy: 'localhost:8080'
   });
-  gulp.watch(paths.watch.scss, gulp.series('clean-css', compileSass));
-  gulp.watch(paths.watch.images, gulp.series('clean-images', 'convert-images'));
-  gulp.watch(paths.watch.fonts, gulp.series('clean-fonts', 'stream-fonts'));
-  gulp.watch(paths.watch.js, gulp.series('clean-js', 'stream-js'));
+  gulp.watch(paths.watch.scss, gulp.series('clean-css', 'compile-sass'));
+  gulp.watch(paths.watch.images, gulp.series('clean-images', 'compile-images'));
+  gulp.watch(paths.watch.fonts, gulp.series('clean-fonts', 'compile-fonts'));
+  gulp.watch(paths.watch.js, gulp.series('clean-js', 'compile-js'));
   gulp.watch(paths.watch.twig).on('change', browserSync.reload);
 }
 
 exports.watch = watch;
-exports.build = gulp.series('clean-all', compileSass, 'stream-js', 'stream-fonts', 'convert-images');
+exports.build = gulp.series('clean-all', 'compile-sass', 'compile-js', 'compile-fonts', 'compile-images');
 exports.default = watch;
