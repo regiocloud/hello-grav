@@ -81,7 +81,8 @@ gulp.task('clean-js', () => {
   return del(['dist/js/**/*']);
 });
 
-function watch() {
+
+gulp.task('watch', () => {
   browserSync.init({
     proxy: 'localhost:8080'
   });
@@ -90,8 +91,6 @@ function watch() {
   gulp.watch(paths.watch.fonts, gulp.series('clean-fonts', 'compile-fonts'));
   gulp.watch(paths.watch.js, gulp.series('clean-js', 'compile-js'));
   gulp.watch(paths.watch.twig).on('change', browserSync.reload);
-}
+});
 
-exports.watch = watch;
 exports.build = gulp.series('clean-all', 'compile-sass', 'compile-js', 'compile-fonts', 'compile-images');
-exports.default = watch;

@@ -4,9 +4,7 @@
   "description": "Minimalist gulp setup for creating your own GRAV themes. Including browser-sync, sass compilation and webp-converter. Does not use css and js optimization because it's not necessary due to the included asset manager in GRAV.",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "start": "gulp"
+    "build": "gulp build"
   },
   "keywords": [
     "GRAV Theme, sass compilation, browser-sync, webp-converter"
