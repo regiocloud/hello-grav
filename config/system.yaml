@@ -45,7 +45,7 @@ pages:
   publish_dates: true
   process:
     markdown: true
-    twig: false
+    twig: true
   twig_first: false
   never_cache_twig: false
   events:
@@ -210,4 +210,4 @@ flex:
 strict_mode:
   yaml_compat: true
   twig_compat: true
-  blueprint_compat: false
+  blueprint_compat: true
