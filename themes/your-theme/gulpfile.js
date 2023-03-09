@@ -16,7 +16,8 @@ const paths = {
     images: './src/images/**/*.{png,PNG,jpg,JPG,jpeg,JPEG',
     fonts: './src/fonts/**/*.{woff,WOFF,ttf,TTF}',
     js: './src/js/**/*.js',
-    twig: './templates/**/*.html.twig'
+    twig: './templates/**/*.html.twig',
+    md: './../../pages/**/*.md'
   },
   dest: {
     css: './dist/css-compiled',
@@ -90,7 +91,14 @@ gulp.task('watch', () => {
   gulp.watch(paths.watch.images, gulp.series('clean-images', 'compile-images'));
   gulp.watch(paths.watch.fonts, gulp.series('clean-fonts', 'compile-fonts'));
   gulp.watch(paths.watch.js, gulp.series('clean-js', 'compile-js'));
-  gulp.watch(paths.watch.twig).on('change', browserSync.reload);
+  gulp.watch(paths.watch.twig).on('change', () => {
+    return gulp.src(paths.watch.twig)
+    .pipe(browserSync.reload({stream: true}));
+  });
+  gulp.watch(paths.watch.md).on('change', () => {
+    return gulp.src(paths.watch.md)
+    .pipe(browserSync.reload({stream: true}));
+  });
 });
 
 exports.build = gulp.series('clean-all', 'compile-sass', 'compile-js', 'compile-fonts', 'compile-images');
