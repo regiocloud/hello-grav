@@ -2,12 +2,8 @@ enabled: true
 folders:
   - accounts
   - config
-  - localhost
   - pages
   - plugins
-  - themes
-  - .gitignore
-  - README.md
 SyncNotice: null
 sync:
   on_save: true
